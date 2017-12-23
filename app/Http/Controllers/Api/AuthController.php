@@ -13,7 +13,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         try {
             $token = JWTAuth::attempt($credentials);
-            dd($token);
+            //dd($token);
         } catch (JWTException $ex) {
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
